@@ -3,6 +3,15 @@
 install -v -d					"${ROOTFS_DIR}/etc/wpa_supplicant"
 install -v -m 600 files/wpa_supplicant.conf	"${ROOTFS_DIR}/etc/wpa_supplicant/"
 
+cat << EOF > "${ROOTFS_DIR}/etc/wpa_supplicant/wpa_supplicant.conf"
+country=${WPA_COUNTRY}
+
+network={
+    ssid="${WIFI_SSID}"
+    psk="${WIFI_PSWD}"
+}
+EOF
+
 if [ -v WPA_COUNTRY ]; then
 	on_chroot <<- EOF
 		SUDO_USER="${FIRST_USER_NAME}" raspi-config nonint do_wifi_country "${WPA_COUNTRY}"
