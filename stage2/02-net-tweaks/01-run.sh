@@ -9,6 +9,7 @@ if [ -v WPA_COUNTRY ]; then
 	EOF
 fi
 
+
 # Disable wifi on 5GHz models if WPA_COUNTRY is not set
 mkdir -p "${ROOTFS_DIR}/var/lib/systemd/rfkill/"
 if [ -n "$WPA_COUNTRY" ]; then
