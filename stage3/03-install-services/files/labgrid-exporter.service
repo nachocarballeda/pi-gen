@@ -1,0 +1,20 @@
+[Unit]
+Description=Labgrid Exporter
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=dev
+Environment="PYTHONUNBUFFERED=1"
+# Should contain LG_CROSSBAR configuration
+EnvironmentFile=-/etc/environment
+ExecStart=/home/dev/labgrid/labgrid-venv/bin/labgrid-exporter /etc/labgrid/exporter.yaml
+Restart=on-failure
+RestartForceExitStatus=100
+RestartSec=30
+DynamicUser=yes
+# Adjust to your distribution (most often "dialout" or "tty")
+SupplementaryGroups=dialout plugdev dev adm cdrom sudo audio www-data video users input render netdev gpio i2c spi
+
+[Install]
+WantedBy=multi-user.target
