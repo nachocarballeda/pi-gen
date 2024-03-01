@@ -4,11 +4,11 @@ After=network-online.target
 Wants=network-online.target
 
 [Service]
-User=dev
+User=example_user
 Environment="PYTHONUNBUFFERED=1"
 # Should contain LG_CROSSBAR configuration
 EnvironmentFile=-/etc/environment
-ExecStart=/home/dev/labgrid/labgrid-venv/bin/labgrid-exporter /etc/labgrid/exporter.yaml
+ExecStart=/home/example_user/labgrid/labgrid-venv/bin/labgrid-exporter /etc/labgrid/exporter.yaml
 Restart=on-failure
 RestartForceExitStatus=100
 RestartSec=30

@@ -3,3 +3,5 @@ python3-pip
 python3-setuptools
 virtualenv
 microcom
+git
+libsnappy-dev
