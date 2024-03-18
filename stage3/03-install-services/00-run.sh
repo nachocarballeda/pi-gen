@@ -10,6 +10,9 @@ install -v -d					"${ROOTFS_DIR}/etc/labgrid"
 install -v -m 600 files/exporter.yaml	"${ROOTFS_DIR}/etc/labgrid/"
 install -v -m 600 files/coordinator.yaml	"${ROOTFS_DIR}/etc/labgrid/"
 
+install -v -m 600 -D files/sysusers.d/*	"${ROOTFS_DIR}/etc/"
+install -v -m 600 -D files/tmpfiles.d/*	"${ROOTFS_DIR}/etc/"
+
 install -v -m 600 files/labgrid-coordinator.service	"${ROOTFS_DIR}/etc/systemd/system/"
 install -v -m 600 files/labgrid-exporter.service	"${ROOTFS_DIR}/etc/systemd/system/"
 

@@ -1,6 +1,10 @@
-#!/bin/bash -e
+#!/bin/bash -e 
 
 cd /home/$FIRST_USER_NAME
+
+if [ -d "labgrid" ]; then
+    rm -rf "labgrid"
+fi
 
 git clone https://github.com/labgrid-project/labgrid
 
