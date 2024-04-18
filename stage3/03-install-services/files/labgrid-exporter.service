@@ -6,7 +6,7 @@ Wants=network-online.target
 [Service]
 User=example_user
 Environment="PYTHONUNBUFFERED=1"
-# Should contain LG_CROSSBAR configuration
+Environment="LG_CROSSBAR=ws://127.0.0.1:20408/ws"
 EnvironmentFile=-/etc/environment
 ExecStart=/home/example_user/labgrid/labgrid-venv/bin/labgrid-exporter /etc/labgrid/exporter.yaml
 Restart=on-failure

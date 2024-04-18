@@ -5,3 +5,4 @@ virtualenv
 microcom
 git
 libsnappy-dev
+ser2net
