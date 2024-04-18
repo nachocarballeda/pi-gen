@@ -10,5 +10,5 @@ git clone -b v5.2.1 --recursive https://github.com/espressif/esp-idf.git
 
 cd esp-idf
 
-./install.sh esp32 esp32s2 --use-pytest
+./install.sh esp32 esp32s2 --enable-pytest
 
