@@ -3,7 +3,9 @@
 cd ~
 . /home/example_user/esp-idf/export.sh
 
-boards=("2.1.X" "3.3.X" "3.6.X")
+boards=()
+#boards=("2.1.X" "3.3.X" "3.6.X")
+#labgrid-client -p wifi_place acquire
 
 for board in "${boards[@]}"; do
 	labgrid-client -p ${board}_place acquire
@@ -11,8 +13,6 @@ for board in "${boards[@]}"; do
 	labgrid-client -p ${board}_charger_place acquire
 	labgrid-client -p ${board}_charger_place io low
 done
-
-labgrid-client -p wifi_place acquire
 
 sn="labgrid-lab"
 target_directory="/home/example_user/firmware/tools/boardclass"
